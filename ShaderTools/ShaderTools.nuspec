@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Unterrainer Informatik OG Team</authors>
+    <owners>Public Domain</owners>
+    <licenseUrl>http://unlicense.org</licenseUrl>
+	<iconUrl>https://github.com/UnterrainerInformatik/ShaderTools/raw/master/icon.png</iconUrl>
+    <projectUrl>https://github.com/UnterrainerInformatik/ShaderTools</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+		Work In Progress. Please stand by.
+	</description>
+    <summary>
+      A PCL library that helps with some useful tools when working with shaders in MonoGame, like a reflection helper that determines if the project gets used for OpenGL or DirectX.
+    </summary>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <language>en-US</language>
+    <tags>hlsl directx opengl reflection monogame embedded resource effect effectresource manager</tags>
+  </metadata>
+</package>

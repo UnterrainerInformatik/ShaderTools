@@ -12,6 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
 		This PCL library  helps with some useful tools when working with shaders in MonoGame, like a reflection helper that determines if the project gets used for OpenGL or DirectX and some static extension methods for the GraphicsDevice and the SpriteBatch.
+      Another one helps you to make loading shaders embedded in a DLL more convenient.
 	</description>
     <summary>
       A PCL library that helps with some useful tools when working with shaders in MonoGame, like a reflection helper that determines if the project gets used for OpenGL or DirectX.

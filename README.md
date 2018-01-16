@@ -22,7 +22,65 @@ A PCL library that helps with some useful tools when working with shaders in Mon
 
 ## Getting Started
 
-TBD
+### GraphicsDeviceExtensions
+
+```c#
+public static void Clear(this GraphicsDevice graphicsDevice, RenderTarget2D renderTarget, Color? clearColor = null)
+{
+  graphicsDevice.SetRenderTarget(renderTarget);
+  graphicsDevice.Clear(Color.Black);
+}
+```
+
+
+
+### SpriteBatchExtensions
+
+Draw a fullscreen quad to the rendertarget of your choice.
+
+```c#
+spriteBatch.DrawFullscreenQuad(BloomRenderTarget2,
+  BloomRenderTarget1,
+  GaussianBlurEffect,
+  null,
+  SamplerState.AnisotropicClamp);
+```
+
+Begins the spriteBatch and draws the given texture on to the given RenderTarget using the given parameters. Tidies up your code a bit. Nothing more, nothing less.
+
+### SystemProbe
+
+Probes your game upon start (static class constructor) via reflection for the graphics-profile you use (OpenGL or DirectX). After that you can get it using a static accessor, or you can get the file-extension a shader file would have (ogl or dx11) using another accessor.
+
+```c#
+GraphicsApi api = SystemProbe.CurrentGraphicsApi;
+string name = resourceName + "." + SystemProbe.CurrentShaderExtension + ".mgfxo"
+```
+
+
+
+### EmbeddedEffectManager
+
+Loads effects that have been embedded in a DLL. Needs the Assembly that is this DLL of course and a fully qualified name to get the file.
+
+```c#
+private EmbeddedEffectsManager EmbeddedEffectsManager { get; } =
+  new EmbeddedEffectsManager(typeof(Renderer), "BloomEffectRenderer.Effects.Resources");
+
+public void LoadContent(GraphicsDevice graphicsDevice)
+{
+  ExtractEffect = EmbeddedEffectsManager.Load(graphicsDevice, "BloomExtract");
+  GaussianBlurEffect = EmbeddedEffectsManager.Load(graphicsDevice, "GaussianBlur");
+  CombineEffect = EmbeddedEffectsManager.Load(graphicsDevice, "BloomCombine");
+}
+
+public void UnloadContent()
+{
+  EmbeddedEffectsManager.UnloadContent();
+}
+```
+
+
 
 [homepage]: http://www.unterrainer.info
 [coding]: http://www.unterrainer.info/Home/Coding

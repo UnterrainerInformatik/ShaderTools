@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/UnterrainerInformatik/ShaderTools</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-		Work In Progress. Please stand by.
+		This PCL library  helps with some useful tools when working with shaders in MonoGame, like a reflection helper that determines if the project gets used for OpenGL or DirectX and some static extension methods for the GraphicsDevice and the SpriteBatch.
 	</description>
     <summary>
       A PCL library that helps with some useful tools when working with shaders in MonoGame, like a reflection helper that determines if the project gets used for OpenGL or DirectX.
